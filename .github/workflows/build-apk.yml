@@ -23,7 +23,7 @@ jobs:
       - name: 🤖 Setup Android SDK & Tools
         uses: android-actions/setup-android@v3
         with:
-          packages: 'platforms;android-35 build-tools;35.0.0'
+          packages: 'platforms;android-35 platforms;android-36 build-tools;35.0.0 build-tools;36.0.0 platform-tools'
 
       - name: 📝 Accept Android SDK Licenses
         run: |
@@ -52,6 +52,10 @@ jobs:
             npx cap add android
           fi
           npx cap sync android
+          # Ensure fallback 36 doesn't override SDK 35 in capacitor-android
+          sed -i 's/: 36/: 35/g' node_modules/@capacitor/android/capacitor/build.gradle || true
+          sed -i 's/compileSdk = 36/compileSdk = 35/g' node_modules/@capacitor/android/capacitor/build.gradle || true
+          sed -i 's/targetSdkVersion 36/targetSdkVersion 35/g' node_modules/@capacitor/android/capacitor/build.gradle || true
 
       - name: 🚀 Build Debug APK
         run: |

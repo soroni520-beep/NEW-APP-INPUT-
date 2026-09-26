@@ -24,22 +24,6 @@ allprojects {
     }
 }
 
-subprojects {
-    afterEvaluate { project ->
-        if (project.hasProperty('android')) {
-            android {
-                compileSdk = 35
-                if (defaultConfig != null) {
-                    defaultConfig {
-                        targetSdk = 35
-                        minSdk = 24
-                    }
-                }
-            }
-        }
-    }
-}
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
