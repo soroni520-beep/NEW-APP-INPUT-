@@ -102,36 +102,28 @@ export const PWAInstallModal: React.FC<PWAInstallModalProps> = ({ isOpen, onClos
                     className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 font-bold text-slate-950 flex items-center justify-center gap-2 shadow-lg shadow-orange-500/20 active:scale-[0.98] transition cursor-pointer"
                   >
                     <Download className="w-5 h-5" />
-                    📱 ১-ক্লিকে অ্যান্ড্রয়েড অ্যাপ ইনস্টল করুন
+                    📱 ১-ক্লিকে আসল অ্যান্ড্রয়েড অ্যাপ ইনস্টল করুন
                   </button>
-                  <p className="text-[11px] text-slate-400">
-                    কোনো এক্সটার্নাল আনভেরিফাইড ডাউনলোডের ঝুঁকি নেই, সরাসরি ফোনের হোম স্ক্রিনে ইনস্টল হবে।
+                  <p className="text-[11px] text-emerald-400 font-medium">
+                    ✓ কোনো ডাউনলোড ঝামেলার প্রয়োজন নেই, সরাসরি ফোনের হোম স্ক্রিনে ইনস্টল হবে।
                   </p>
                 </div>
               )}
 
-              {/* Direct APK File Download Box */}
+              {/* GitHub Actions Real APK Download Guide */}
               <div className="bg-slate-800/60 border border-slate-700 p-4 rounded-xl space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-amber-400 font-semibold text-sm">
                     <Download className="w-4 h-4" />
-                    <span>সরাসরি .apk ফাইল ডাউনলোড:</span>
+                    <span>GitHub Actions থেকে অফলাইন APK ডাউনলোড:</span>
                   </div>
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                    v2.0.apk
+                    v2.0 APK
                   </span>
                 </div>
-                <p className="text-xs text-slate-300">
-                  যদি প্যাকেজ ফাইলটি সরাসরি ডাউনলোড করতে চান, তবে নিচের বোতামে ক্লিক করুন:
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  আপনার GitHub রিপোজিটরির <strong>Actions</strong> ট্যাবে গিয়ে প্রতিটি বিল্ড শেষে <strong>TASS-INPUT-v2.0-APK</strong> আর্টফ্যাক্ট থেকে সরাসরি ফুল ভার্সন রিয়েল অ্যান্ড্রয়েড APK ডাউনলোড করতে পারবেন।
                 </p>
-                <a
-                  href="/tass-input-v2.0.apk"
-                  download="tass-input-v2.0.apk"
-                  className="w-full py-2.5 px-4 rounded-lg bg-slate-700 hover:bg-slate-600 border border-slate-600 font-medium text-xs text-amber-300 flex items-center justify-center gap-2 transition"
-                >
-                  <Download className="w-4 h-4" />
-                  ⬇️ tass-input-v2.0.apk প্যাকেজ ডাউনলোড করুন
-                </a>
               </div>
 
               {/* Step by Step Manual Guide for Android Users */}

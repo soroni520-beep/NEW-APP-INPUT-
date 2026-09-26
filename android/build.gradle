@@ -13,9 +13,30 @@ buildscript {
 apply from: "variables.gradle"
 
 allprojects {
+    ext {
+        compileSdkVersion = 35
+        targetSdkVersion = 35
+        minSdkVersion = 24
+    }
     repositories {
         google()
         mavenCentral()
+    }
+}
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            android {
+                compileSdk = 35
+                if (defaultConfig != null) {
+                    defaultConfig {
+                        targetSdk = 35
+                        minSdk = 24
+                    }
+                }
+            }
+        }
     }
 }
 
