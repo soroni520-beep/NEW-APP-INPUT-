@@ -9,7 +9,6 @@ jobs:
   build-apk:
     name: 📱 Generate Android APK
     runs-on: ubuntu-latest
-
     steps:
       - name: 📥 Checkout Repository
         uses: actions/checkout@v4
@@ -42,7 +41,11 @@ jobs:
 
       - name: ⚙️ Setup Android SDK & Licenses
         run: |
-          yes | sdkmanager --licenses || true
+          mkdir -p ~/.android
+          touch ~/.android/repositories.cfg
+          if [ -d "$ANDROID_HOME/cmdline-tools/latest/bin" ]; then
+            yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+          fi
 
       - name: 🚀 Build Debug APK
         run: |
