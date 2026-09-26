@@ -1,0 +1,9 @@
+{
+	"appId": "com.tassinput.app",
+	"appName": "TASS INPUT 2.0",
+	"webDir": "dist",
+	"bundledWebRuntime": false,
+	"server": {
+		"androidScheme": "https"
+	}
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">TASS INPUT 2.0</string>
+    <string name="title_activity_main">TASS INPUT 2.0</string>
+    <string name="package_name">com.tassinput.app</string>
+    <string name="custom_url_scheme">com.tassinput.app</string>
+</resources>
